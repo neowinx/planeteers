@@ -1,33 +1,19 @@
-#include <SoftwareSerial.h>
-#include "PMS.h"
+#define VERSION 0.1
 
-#if defined (ARDUINO_ARCH_ESP32) || defined(ESP32)
-#	define ESP32_ARCH 1
-# define PMS_RX_PIN T0 // Rx from PMS (== PMS Tx)
-# define PMS_TX_PIN T2 // Tx to PMS (== PMS Rx)
-#elif defined(ARDUINO_ARCH_ESP8266)
-# define PMS_RX_PIN D4 // Rx from PMS (== PMS Tx)
-# define PMS_TX_PIN D2 // Tx to PMS (== PMS Rx)
-#else
-#	error "Architecture unknown and not supported"
-#endif
-
-SoftwareSerial pmsSerial(PMS_RX_PIN, PMS_TX_PIN); // Rx pin = GPIO2 (D4 on Wemos D1 Mini)
-PMS pms(pmsSerial, false);           // Use the software serial port for the PMS
-PMS::DATA data;
+#include "sensor.h"
 
 void setup()
 {
-  Serial.begin(9600);   // GPIO1, GPIO3 (TX/RX pin on ESP-12E Development Board)
+  Serial.begin(9600);
   Serial.println();
   Serial.print("Air Quality Sensor starting up, v");
-  pmsSerial.begin(9600);   // Connection for PMS5003
-  // Serial1.begin(9600);  // GPIO2 (D4 pin on ESP-12E Development Board)
+  Serial.println(VERSION);
+  pmsStart();
 }
 
 void loop()
 {
-  if (pms.read(data))
+  if (pmsRead())
   {
     Serial.print("PM 1.0 (ug/m3): ");
     Serial.println(data.PM_AE_UG_1_0);
