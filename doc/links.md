@@ -5,3 +5,4 @@
 - https://randomnerdtutorials.com/power-esp32-esp8266-solar-panels-battery-level-monitoring/
 - https://circuitdigest.com/microcontroller-projects/interfacing-sx1278-lora-module-with-esp32
 - https://www.thethingsnetwork.org/forum/t/ttgo-t-beam-topic/15297/277
+- https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country/#p
