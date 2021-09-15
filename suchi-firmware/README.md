@@ -2,7 +2,7 @@
 
 Firmware for a sensor that sends Particulate Matter information to a receiving node using LoRa for [AireLibre](https://airelib.re/)
 
-This should be accompained with a [Ma-ti](https://github.com/neowinx/ma-ti-firmware) node to send the PMS data to the corresponding [Linka](https://github.com/garyservin/linka-firmware) instance
+This should be accompained with a [Ma-ti](https://github.com/neowinx/planeteers/tree/main/ma-ti-firmware) node to send the PMS data to the corresponding [Linka](https://github.com/garyservin/linka-firmware) instance
 
 You can find more information about this project on the [ parent directory ](https://github.com/neowinx/planeteers)
 

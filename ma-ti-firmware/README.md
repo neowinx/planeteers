@@ -1,6 +1,6 @@
 # ma-ti-firmare
 
-Firmware for a sensor that receives Particulate Matter information from a [suchi](https://github.com/neowinx/planeteers/ma-ti-firmware) node using LoRa for [AireLibre](https://airelib.re/)
+Firmware for a sensor that receives Particulate Matter information from a [suchi](https://github.com/neowinx/planeteers/tree/main/suchi-firmware) node using LoRa for [AireLibre](https://airelib.re/)
 
 You can find more information about this project on the [ parent directory ](https://github.com/neowinx/planeteers)
 
