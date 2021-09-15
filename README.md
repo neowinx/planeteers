@@ -4,8 +4,8 @@ This repository contains the firmware for sensors that sends Particulate Matter 
 
 It consists of two main parts:
 
-- [Suchi](tree/main/suchi-firmware): The firmware for the sensors that sends the data
-- [Ma-ti](tree/main/ima-ti-firmware): The firmware for the node that receives the data from __suchi__ and forwards it to [Linka](https://github.com/garyservin/linka-firmware)
+- [Suchi](https://github.com/neowinx/planeteers/tree/main/suchi-firmware): The firmware for the sensors that sends the data
+- [Ma-ti](https://github.com/neowinx/planeteers/tree/main/ma-ti-firmware): The firmware for the node that receives the data from __suchi__ and forwards it to [Linka](https://github.com/garyservin/linka-firmware)
 
 ## Motivation
 
@@ -37,8 +37,8 @@ Thank you for reading until this point, If I haven't lost you, let's proceed to 
 
 Reference for the firmware installation are in their corresponding projects:
 
-- [Suchi](tree/main/suchi-firmware)
-- [Ma-ti](tree/main/ma-ti-firmware)
+- [Suchi](https://github.com/neowinx/planeteers/tree/main/suchi-firmware)
+- [Ma-ti](https://github.com/neowinx/planeteers/tree/main/ma-ti-firmware)
 
 ## Good Luck!
 
