@@ -7,7 +7,7 @@ void setup()
   Serial.println();
   Serial.print("Ma-ti Air Quality Sensor starting up, v");
   Serial.println(VERSION);
-  initLoRa();
+  loraInit(receivePayload);
 }
 
 void loop()
@@ -15,3 +15,7 @@ void loop()
   // here we should receive and send the data
 }
 
+void receivePayload(char payload[]) {
+  Serial.print("payload received: ");
+  Serial.println(payload);
+}
