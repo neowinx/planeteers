@@ -1,7 +1,6 @@
-#define VERSION 0.1
-
+#include "../config.h"
 #include "sensor.h"
-#include "lora.h"
+#include "lora_sender.h"
 
 void setup()
 {

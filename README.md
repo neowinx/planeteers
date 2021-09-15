@@ -1,8 +1,19 @@
-# suchi-firmare
+# planeteers
 
-Firmware for a sensor that sends Particulate Matter information to a receiving node using LoRa for [AireLibre](https://airelib.re/)
+This repository contains the firmware for sensors that sends Particulate Matter information to receiving nodes using LoRa for [AireLibre](https://airelib.re/)
 
-This should be accompained with a [Ma-ti](https://github.com/neowinx/ma-ti-firmware) node to send the PMS data to the corresponding [Linka](https://github.com/garyservin/linka-firmware) instance
+It consists of two main parts:
+
+- [Suchi](/suchi-firmare): The firmware for the sensors that sends the data
+- [Ma-ti](/ma-ti-firmare): The firmware for the node that receives the data from __suchi__ and forwards it to [Linka](https://github.com/garyservin/linka-firmware)
+
+## Motivation
+
+I was recently interested in [ LoRa ](https://en.wikipedia.org/wiki/LoRa#LoRaWAN) since it's relatively new to me (even though it has been around quite some years already) and the
+possible applications that we could make with this technology, when I stumble with the [AireLibre](https://airelib.re/) initiave, and since the project it's revolving around 
+ubiquitous sensors, the opportunitty of implementing a self sustainable sensor using hobbiest level hardware was calling me. And I answer it!
+
+### Why two separate projects?
 
 I know that probably there's no need for two repositories for both roles (the sender and the receiver) since we could've just manage those differences using precompiled macros.
 The reason for not doing that, is that we want a minimal codebase in order to have a small memory footprint for the nodes, and having to manage precompiled macros and the resulting
@@ -13,7 +24,7 @@ we will mantain these two repositories until I see otherwise even if that means 
 ### Why not LoRaWAN?
 
 The first prototype for this project was indeed a LoRaWAN node in order to use the [ TTN infraestructure ](https://www.thethingsnetwork.org/). But since gateways are rather
-scarse in Paraguay (0 gateways actually in my city) I began to construct one of those single channel gateways (or single channel relays.. or whatever they are called now...)
+scarse in [ Paraguay ](https://www.thethingsnetwork.org/community) (0 gateways actually in my city) I began to construct one of those single channel gateways (or single channel relays.. or whatever they are called now...)
 for testing purposes, only to find out that those are condemned by the TTN community and that the
 [ V2 of the TTN will be shutdown this 31 of december 2021 ](https://www.thethingsnetwork.org/forum/t/the-things-network-v2-is-permanently-shutting-down-scheduled/50710), 
 and, at the current date, not accepting new nodes, only leaving me with the V3 option that only accepts official (proper) gateways from one of the selected manufacturers 
@@ -24,47 +35,11 @@ Thank you for reading until this point, If I haven't lost you, let's proceed to 
 
 ## Installation
 
-You can use [ PlatformIO ](https://platformio.org/platformio-ide) or [ Arduino IDE ](https://www.arduino.cc/en/software) to upload the firmware
+Reference for the firmware installation are in their corresponding projects:
 
-### PlatformIO
+- [Suchi](/suchi-firmare): The firmware for the sensors that sends the data
+- [Ma-ti](/ma-ti-firmare): The firmware for the node that receives the data from __suchi__ and forwards it to [Linka](https://github.com/garyservin/linka-firmware)
 
-Install [ PlatformIO ](https://platformio.org/platformio-ide) and...
+## Enjoy
 
-#### ... in Visual Studio Code
-
-- Open the project with vscode having the platformio plugin installed
-- Click on the right arrow icon on the platformio toolbar
-
-#### ... or in your terminal
-
-```bash
-platformio run -t upload
-````
-
-### Arduino IDE
-
-Install [ Arduino IDE ](https://www.arduino.cc/en/software) and...
-
-- Open **File -> Preferences** and copy the following urls on the __"Additional Boards Manager URLs"__ input text
-
-```
-https://arduino.esp8266.com/stable/package_esp8266com_index.json,https://dl.espressif.com/dl/package_esp32_index.json
-```
-
-and click on **Ok**
-
-- Install the esp32 boards family on **Tools -> Boards Manager**
-
-- Select the corresponding esp32 board on **Tools -> Board:** for example the **"DOIT BOARD "** 
-
-- Install these libraries by clicking on the **Tools -> Manage Libraries...**
-
-  * LoRa
-
-- Select the correct port on the **Tools -> Port:** menu
-
-- Upload the sketch using the arrow button or by selecting the **Sketch -> Upload** menu
-
-# FAQ
-
-## Enjoy!
+[ neowinx ](https://github.com/neowinx)
