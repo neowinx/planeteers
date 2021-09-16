@@ -9,7 +9,8 @@ It consists of two main parts:
 
 ## Motivation
 
-I just recently find out about all the [ LoRa ](https://en.wikipedia.org/wiki/LoRa#LoRaWAN) stuff, and since it's relatively new to me (even though it has been around quite some years already) I have been trying to devise a project to use it
+I just recently find out about all the [ LoRa ](https://en.wikipedia.org/wiki/LoRa#LoRaWAN) stuff, and since it's relatively new to me (even though it has been around quite some years already)
+I have been trying to devise a project to use it
 
 Around this time, I stumble with the [AireLibre](https://airelib.re/) initiave, and since the project is revolving around 
 ubiquitous sensors, the opportunitty of implementing a self sustainable sensor (solar charged, low power) using hobbiest 
@@ -32,10 +33,11 @@ The first prototype for this project was indeed a LoRaWAN node in order to use t
 But gateways are rather
 scarse in [ Paraguay ](https://www.thethingsnetwork.org/community) (0 gateways actually in my city) so I began to construct one of those single channel gateways 
 (or single channel relays.. or whatever they are called now...)
-for testing purposes, only to find out that those are condemned by the TTN community and that the
-[ V2 of the TTN will be shutdown this 1 of december 2021 ](https://www.thethingsnetwork.org/forum/t/the-things-network-v2-is-permanently-shutting-down-scheduled/50710)
+for testing purposes, only to find out that those are [ condemned by the TTN community ](https://www.thethingsnetwork.org/forum/t/the-future-of-single-channel-gateways/6590)
+and that the [ V2 of the TTN will be shutdown this 1 of december 2021 ](https://www.thethingsnetwork.org/forum/t/the-things-network-v2-is-permanently-shutting-down-scheduled/50710)
 
-Because of this, at the current date, TTN V2 is not registering new gateways anymore, only leaving me with the V3 option that only accepts official (proper) gateways from one of the selected manufacturers or to [ buildin a proper one ](https://www.thethingsnetwork.org/docs/gateways/start/build/) myself.
+Because of this, at the current date, TTN V2 is not registering new gateways anymore, only leaving me with the V3 option that only accepts official (proper) gateways from one of the
+selected manufacturers or to [ buildin a proper one ](https://www.thethingsnetwork.org/docs/gateways/start/build/) myself.
 
 All that just gives me the same headache you're probably having now, so I will only use LoRa for the moment since the application in this case scenario is rather
 simple

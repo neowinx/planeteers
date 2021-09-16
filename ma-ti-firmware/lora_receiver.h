@@ -13,7 +13,7 @@ void (*_onReceive)(char[]);
 void loraReceive(int packetSize);
 
 // Initiate LoRa 
-void loraInit(void(*callback)(char[])) {
+void initLora(void(*callback)(char[])) {
   LoRa.setPins(CS_PIN, RESET_PIN, IRQ_PIN);
 
   if (!LoRa.begin(915E6)) {
