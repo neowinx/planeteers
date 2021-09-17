@@ -136,7 +136,7 @@ bool initWifi()
 /*
   Report the latest values to HTTP Server
 */
-void reportToHttp(uint16_t g_pm1p0_sp_value, uint16_t g_pm2p5_sp_value, uint16_t g_pm10p0_sp_value)
+void reportToHttp(String g_pm1p0_sp_value, String g_pm2p5_sp_value, String g_pm10p0_sp_value)
 {
   char measurements[256];
   char recorded[27];

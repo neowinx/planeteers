@@ -3,8 +3,8 @@
 
 # if defined (ARDUINO_ARCH_ESP32) || defined(ESP32)
 #   define ESP32_ARCH 1
-#   define PMS_RX_PIN T0 // Rx from PMS (== PMS Tx)
-#   define PMS_TX_PIN T2 // Tx to PMS (== PMS Rx)
+#   define PMS_RX_PIN 21 // Rx from PMS (== PMS Tx)
+#   define PMS_TX_PIN 22 // Tx to PMS (== PMS Rx)
 # elif defined(ARDUINO_ARCH_ESP8266)
 #   define PMS_RX_PIN D4 // Rx from PMS (== PMS Tx)
 #   define PMS_TX_PIN D2 // Tx to PMS (== PMS Rx)

@@ -35,9 +35,9 @@ void loop() {
     g_pm2p5_sp_value   = data.PM_SP_UG_2_5;
     g_pm10p0_sp_value  = data.PM_SP_UG_10_0;
 
-    String _message = g_pm1p0_sp_value + ":"
-      + g_pm2p5_sp_value + ":" 
-      + g_pm10p0_sp_value;
+    String _message = String(g_pm1p0_sp_value) + ":"
+      + String( g_pm2p5_sp_value ) + ":" 
+      + String( g_pm10p0_sp_value );
     
     Serial.print("PM 1.0 (ug/m3): ");
     Serial.println(data.PM_AE_UG_1_0);
@@ -56,6 +56,6 @@ void loop() {
   }
 
   // seconds to delay for the next attempt to read the values (by default its 30)
-  delay(30000);
+  delay(2000);
 }
 
