@@ -8,48 +8,38 @@
 # endif
 
 int counter = 0;
-void (*_onReceive)(char[]);
-
-void loraReceive(int packetSize);
 
 // Initiate LoRa 
-void initLora(void(*callback)(char[])) {
+void initLora() {
   LoRa.setPins(CS_PIN, RESET_PIN, IRQ_PIN);
 
   if (!LoRa.begin(915E6)) {
     Serial.println("Starting LoRa failed!");
     while (1);
   }
-  
+
   // Uncomment the next line to disable the default AGC and set LNA gain, values between 1 - 6 are supported
   // LoRa.setGain(6);
-
-  _onReceive = callback;
-  
-  // register the receive callback
-  LoRa.onReceive(loraReceive);
-
-  // put the radio into receive mode
-  LoRa.receive();
 }
 
-void loraReceive(int packetSize) {
-  // received a packet
-  Serial.print("Received packet '");
+String receiveLoRa() {
+  String payload = "";
+  // try to parse packet
+  int packetSize = LoRa.parsePacket();
+  if (packetSize) {
+    // received a packet
+    Serial.print("Received packet '");
 
-  char payload[packetSize];
+    // read packet
+    while (LoRa.available()) {
+      payload += (char)LoRa.read();
+    }
 
-  // read packet
-  for (int i = 0; i < packetSize; i++) {
-    payload[i] = (char)LoRa.read();
-    Serial.print(payload[i]);
+    Serial.print(payload);
+
+    // print RSSI of packet
+    Serial.print("' with RSSI ");
+    Serial.println(LoRa.packetRssi());
   }
-
-  // print RSSI of packet
-  Serial.print("' with RSSI ");
-  Serial.println(LoRa.packetRssi());
-
-  if (_onReceive) {
-    _onReceive(payload);
-  }
+  return payload;
 }
