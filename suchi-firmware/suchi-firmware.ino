@@ -25,6 +25,10 @@ void setup() {
   Serial.println();
   Serial.print("Suchi Air Quality Sensor starting up, v");
   Serial.println(VERSION);
+  Serial.print("PMS_RX_PIN:");
+  Serial.println(PMS_RX_PIN);
+  Serial.print("PMS_TX_PIN:");
+  Serial.println(PMS_TX_PIN);
   pmsStart();
   initLoRa();
 }
@@ -39,6 +43,8 @@ void loop() {
       + String( g_pm2p5_sp_value ) + ":" 
       + String( g_pm10p0_sp_value );
     
+    Serial.println();
+
     Serial.print("PM 1.0 (ug/m3): ");
     Serial.println(data.PM_AE_UG_1_0);
 
@@ -51,11 +57,9 @@ void loop() {
     Serial.println();
 
     sendLoRa(_message);
-  } else {
-    Serial.println("no data ?");
   }
 
-  // seconds to delay for the next attempt to read the values (by default its 30)
-  delay(2000);
+  Serial.println("sleeping esp for 60 seconds");
+  delay(60000);
 }
 
