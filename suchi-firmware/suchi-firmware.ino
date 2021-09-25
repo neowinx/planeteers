@@ -39,7 +39,8 @@ void loop() {
     g_pm2p5_sp_value   = data.PM_SP_UG_2_5;
     g_pm10p0_sp_value  = data.PM_SP_UG_10_0;
 
-    String _message = String(g_pm1p0_sp_value) + ":"
+    String _message = "suchi:"
+      + String(g_pm1p0_sp_value) + ":"
       + String( g_pm2p5_sp_value ) + ":" 
       + String( g_pm10p0_sp_value );
     

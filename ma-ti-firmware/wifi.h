@@ -109,6 +109,7 @@ bool initWifi()
   //set config save notify callback
   wc.setSaveConfigCallback(saveConfigCallback);
 
+  Serial.println("Configuring wc parameters...");
   // Configure custom parameters
   wc.addParameter(&api_key_param);
   wc.addParameter(&latitude_param);
@@ -117,6 +118,7 @@ bool initWifi()
   wc.addParameter(&description_param);
   wc.addParameter(&api_url_param);
 
+  Serial.println("Resetting wc settings...");
   //wc.resetSettings(); //helper to remove the stored wifi connection, comment out after first upload and re upload
 
   /*
@@ -126,6 +128,7 @@ bool initWifi()
      AP_WAIT  = Trap in a continuous loop with captive portal until we have a working WiFi connection
   */
   if (!wc.autoConnect() || force_captive_portal) { // try to connect to wifi
+    Serial.println("Starting configuration portal...");
     /* We could also use button etc. to trigger the portal on demand within main loop */
     wc.startConfigurationPortal(AP_WAIT); //if not connected show the configuration portal
   }
