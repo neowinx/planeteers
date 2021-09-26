@@ -60,8 +60,8 @@ void loop() {
     sendLoRa(_message);
   }
 
-  Serial.println("deep sleep esp for 120 seconds");
-  esp_sleep_enable_timer_wakeup(120000000);
+  Serial.println("deep sleep esp for 60 seconds");
+  esp_sleep_enable_timer_wakeup(60000000);
   esp_deep_sleep_start();
 }
 

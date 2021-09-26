@@ -12,6 +12,9 @@ void setup() {
   initWifi();
   Serial.println("Initializing LoRa...");
   initLora();
+  Serial.println("Ready");
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
 }
 
 void loop() {
@@ -26,7 +29,7 @@ void loop() {
       Serial.print("pm1p0: " + String(g_pm1p0_sp_value) + ", ");
       Serial.print("pm2p5: " + String(g_pm2p5_sp_value) + ", ");
       Serial.println("pm10p0: " + String(g_pm10p0_sp_value));
+      reportToHttp(g_pm1p0_sp_value, g_pm2p5_sp_value, g_pm10p0_sp_value);
     }
   }
-  reportToHttp(g_pm1p0_sp_value, g_pm2p5_sp_value, g_pm10p0_sp_value);
 }
