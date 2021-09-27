@@ -1,6 +1,7 @@
 #include <FS.h>                   // This needs to be first, or it all crashes and burns...
-#include <SPI.h>                  // Explicit #include of built-in SPI needed for platformio 
+#include <SPI.h>                  // Explicit #include of built-in SPI needed for platformio
 #include <WiFiConnect.h>          // Allow configuring WiFi via captive portal
+#include <time.h>                 // To get current time
 
 #if defined (ARDUINO_ARCH_ESP32) || defined(ESP32)
 #  include <HTTPClient.h>
@@ -14,11 +15,11 @@ char http_data_template[] = "[{"
                             "\"sensor\": \"%s\","
                             "\"source\": \"%s\","
                             "\"description\": \"%s\","
-                            "\"pm1dot0\": %d,"
-                            "\"pm2dot5\": %d,"
-                            "\"pm10\": %d,"
-                            "\"longitude\": %s,"
-                            "\"latitude\": %s,"
+                            "\"pm1dot0\": %s,"
+                            "\"pm2dot5\": %s,"
+                            "\"pm10\": %s,"
+                            "\"longitude\": %d,"
+                            "\"latitude\": %d,"
                             "\"recorded\": \"%s\""
                             "}]";
 
@@ -52,6 +53,7 @@ char latitude[12] = "";
 char longitude[12] = "";
 char description[21] = "";
 char api_url[71] = "";
+char sensor[8] = "PMS7003";
 
 // flag for saving data
 bool shouldSaveConfig = false;
@@ -109,6 +111,7 @@ bool initWifi()
   //set config save notify callback
   wc.setSaveConfigCallback(saveConfigCallback);
 
+  Serial.println("Configuring wc parameters...");
   // Configure custom parameters
   wc.addParameter(&api_key_param);
   wc.addParameter(&latitude_param);
@@ -126,8 +129,33 @@ bool initWifi()
      AP_WAIT  = Trap in a continuous loop with captive portal until we have a working WiFi connection
   */
   if (!wc.autoConnect() || force_captive_portal) { // try to connect to wifi
+    Serial.println("Starting configuration portal...");
     /* We could also use button etc. to trigger the portal on demand within main loop */
     wc.startConfigurationPortal(AP_WAIT); //if not connected show the configuration portal
+  }
+
+  strcpy(api_key, api_key_param.getValue());
+  strcpy(latitude, latitude_param.getValue());
+  strcpy(longitude, longitude_param.getValue());
+  strcpy(sensor, sensor_param.getValue());
+  strcpy(description, description_param.getValue());
+  strcpy(api_url, api_url_param.getValue());
+
+  if (strcmp(api_key, "") == 0) {
+    Serial.println("Stored parameters are empty, reset the parameters");
+    wc.startConfigurationPortal(AP_WAIT);
+  }
+
+  //TODO: see if this next part for ntp config can go somewhere else
+  // Configure ntp client
+  configTime(timezone * 3600, dst * 3600, "pool.ntp.org", "time.nist.gov");
+
+  time(&now);
+  timeinfo = localtime(&now);
+  while (timeinfo->tm_year == 70) {
+    delay(500);
+    time(&now);
+    timeinfo = localtime(&now);
   }
 
   return true;
@@ -138,10 +166,15 @@ bool initWifi()
 */
 void reportToHttp(String g_pm1p0_sp_value, String g_pm2p5_sp_value, String g_pm10p0_sp_value)
 {
+  Serial.println("Reporting to http ");
+  Serial.print(g_pm1p0_sp_value + "  ");
+  Serial.print(g_pm2p5_sp_value + "  ");
+  Serial.println(g_pm10p0_sp_value);
   char measurements[256];
   char recorded[27];
   char source[10];
 
+  Serial.println("generating recorded template: ");
   sprintf(recorded,
           recorded_template,
           timeinfo->tm_year + 1900,
@@ -150,7 +183,14 @@ void reportToHttp(String g_pm1p0_sp_value, String g_pm2p5_sp_value, String g_pm1
           timeinfo->tm_hour,
           timeinfo->tm_min,
           timeinfo->tm_sec);
+  Serial.println(recorded);
+  Serial.print("Printing source: ");
   sprintf(source, "%x", g_device_id);
+  Serial.println(source);
+  Serial.printf("generating measurements: %s : %s : %s",
+          g_pm1p0_sp_value,
+          g_pm2p5_sp_value,
+          g_pm10p0_sp_value);
   sprintf(measurements,
           http_data_template,
           sensor,
@@ -165,7 +205,9 @@ void reportToHttp(String g_pm1p0_sp_value, String g_pm2p5_sp_value, String g_pm1
 
   Serial.println(measurements);
 
-  if (http.begin(client, api_url)) {
+  Serial.print("connecting to ");
+  Serial.println(api_url);
+  if (http.begin(api_url)) {
 
     // Add headers
     http.addHeader("x-api-key", api_key);
