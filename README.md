@@ -7,6 +7,16 @@ It consists of two main parts:
 - [Suchi](https://github.com/neowinx/planeteers/tree/main/suchi-firmware): The firmware for the sensors that sends the data
 - [Ma-ti](https://github.com/neowinx/planeteers/tree/main/ma-ti-firmware): The firmware for the node that receives the data from __suchi__ and forwards it to [Linka](https://github.com/garyservin/linka-firmware)
 
+## BOM
+
+### Hardware
+
+#### TTGO T-Beam
+
+![TTGO T-Bean board image](doc/img/TTGOTBEAMV10_1-1000x1000.jpg)
+
+This board comes with
+
 ## Motivation
 
 I just recently find out about all the [ LoRa ](https://en.wikipedia.org/wiki/LoRa#LoRaWAN) stuff, and since it's relatively new to me (even though it has been around quite some years already)
