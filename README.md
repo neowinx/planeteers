@@ -7,7 +7,7 @@ This repository contains the information for devices that sends Particulate Matt
 It consists of two main parts:
 
 - [Suchi](https://github.com/neowinx/planeteers/tree/main/suchi-firmware): The firmware for the sensors that sends the data
-- [Ma-ti](https://github.com/neowinx/planeteers/tree/main/ma-ti-firmware): The firmware for the node that receives the data from __suchi__ and forwards it to [Linka](https://github.com/garyservin/linka-firmware)
+- [Ma-ti](https://github.com/neowinx/planeteers/tree/main/ma-ti-firmware): The firmware for the node that receives the data from __suchi__ and forwards it to [Linka](https://github.com/tchx84/linka)
 
 ## Whats the big idea?
 
