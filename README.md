@@ -27,7 +27,7 @@ Every node on the field shoul finally be independently working suchi node should
 
 ## Motivation
 
-I just recently find out about all the [ LoRa ](https://en.wikipedia.org/wiki/LoRa#LoRaWAN) stuff, and since it's relatively new to me (even though it has been around quite some years already)
+I just recently found out about all the [ LoRa ](https://en.wikipedia.org/wiki/LoRa#LoRaWAN) stuff, and since it's relatively new to me (even though it has been around quite some years already)
 I have been trying to devise a project to use it
 
 Around this time, I stumble with the [ AireLibre ](https://airelib.re/) initiave, and since the project is revolving around 
@@ -49,7 +49,7 @@ we will mantain these two projects until we see otherwise even if that means tha
 We are following with the main theme of naming our projects with a [ planeteers ](https://captainplanet.fandom.com/wiki/Captain_Planet_and_the_Planeteers) name
 within AireLibre. Refer to [ this answer ](https://github.com/melizeche/AireLibre#por-qué-linka) for more information about that
 
-[ Ma-ti ](https://captainplanet.fandom.com/wiki/Ma-Ti) is the planeteer of south america and [Suchi](https://earth27.fandom.com/wiki/Suchi) was it's pet monkey
+[ Ma-ti ](https://captainplanet.fandom.com/wiki/Ma-Ti) is the planeteer of south america and [Suchi](https://earth27.fandom.com/wiki/Suchi) was his pet monkey
 
 ### Why not LoRaWAN?
 
