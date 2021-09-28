@@ -23,7 +23,7 @@ Every node on the field shoul finally be independently working suchi node should
 
 ![suchi node prototype](doc/img/esp32-project.jpg)
 
-** image from https://randomnerdtutorials.com/esp32-lora-rfm95-transceiver-arduino-ide/
+image from https://randomnerdtutorials.com/esp32-lora-rfm95-transceiver-arduino-ide/
 
 ## Motivation
 
@@ -77,7 +77,7 @@ Thank you for reading until this point, If I haven't lost you, let's proceed to 
 - 18650 battery [AliExpress](https://www.aliexpress.com/wholesale?catId=0&initiative_id=AS_20210928063050&SearchText=18650+battery) [Amazon](https://www.amazon.com/s?k=18650+battery&ref=nb_sb_noss_1)
 - Exterior plastic box 100x100mm [Luminotecnia](https://www.luminotecnia.com.py/producto/1265/Caja-Exterior-Plastica-de-Conexion-100x100)
 
-** These parts are just here for reference since I will test them on christmas (no, I am not kidding, I need to wait 3 months for these stuff to arrive) **
+_The following parts are just here for reference since I will test them on christmas (no, I am not kidding, I need to wait 3 months for these stuff to arrive)_
 
 - Solar Panel 5V 250mA (anny size will do, but it needs to fit in the top off your case) [AliExpress](https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20210928063647&SearchText=Solar+Panel+5V+250mA) [Amazon](https://www.amazon.com/s?k=Solar+Panel+5V+250mA&ref=nb_sb_noss_2)
 - TP4056 Charging Module [ AliExpress ](https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20210928074815&SearchText=TP4056) [ Amazon ](https://www.amazon.com/s?k=TP4056&i=electronics&ref=nb_sb_noss_2)
@@ -113,7 +113,7 @@ No need to wire anything since everything is already connected in the board. So,
 - Esp32 doit devkit v1.1 [ AliExpress ](https://www.aliexpress.com/item/32928267626.html?spm=a2g0o.productlist.0.0.63c09063WAHduP&algo_pvid=be5c1b93-4cce-4729-a95e-51976a6cb7a1&algo_exp_id=be5c1b93-4cce-4729-a95e-51976a6cb7a1-0&pdp_ext_f={"sku_id"%3A"12000016847177755"}) [ Amazon ](https://www.amazon.com/ESP32-WROOM-32-Development-ESP-32S-Bluetooth-Arduino/dp/B084KWNMM4/ref=sr_1_2_sspa?dchild=1&keywords=doit+esp32+devkit&qid=1632844382&sr=8-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFXNk0wTko0VEQwNkMmZW5jcnlwdGVkSWQ9QTAwMzI2NTIxM0NPSlRFRTFDTUdGJmVuY3J5cHRlZEFkSWQ9QTA5MDk1NzQxN1RIMkxYMUdMRThHJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==)
 
 This is the more barebone alternative. The links to buy these parts are just for reference, if you find a better price for
-these parts
+these parts go ahead!
 
 **=======**
 **CAUTION**
@@ -151,7 +151,7 @@ The antenna should look something like this
 
 ![esp32 antenna example](doc/img/esp32-antenna_example.jpg)
 
-** image from https://www.instructables.com/Communication-LoRa-ESP8266-Radio-RFM95/
+image from https://www.instructables.com/Communication-LoRa-ESP8266-Radio-RFM95/
 
 #### Power
 
