@@ -19,7 +19,7 @@ The following "cutting edge" animation will show the idea in a more "eye-candy" 
 
 ![suchi and ma-ti animation](doc/img/suchi-and-matti.gif)
 
-Every node on the field shoul finally be independently working suchi node should look something like this (image only for reference)
+Every node on the field should be an independently working suchi node that should look something like this (image only for reference)
 
 ![suchi node prototype](doc/img/esp32-project.jpg)
 
