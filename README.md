@@ -101,6 +101,8 @@ It is the more expensive alternative, but it comes with almost everything needed
 
 Just connect the Plantower pins corresponding to the ground and voltage and use the pins 2 and 13 for the Rx and Tx communication
 
+![ pms7003 to t-beam wiring ](doc/img/pinouts/t-beam-pms7003-pinout.png)
+
 **Wiring for Ma-ti**
 
 No need to wire anything since everything is already connected in the board. So, here's a kitty
