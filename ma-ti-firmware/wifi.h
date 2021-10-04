@@ -18,8 +18,8 @@ char http_data_template[] = "[{"
                             "\"pm1dot0\": %s,"
                             "\"pm2dot5\": %s,"
                             "\"pm10\": %s,"
-                            "\"longitude\": %d,"
-                            "\"latitude\": %d,"
+                            "\"longitude\": %s,"
+                            "\"latitude\": %s,"
                             "\"recorded\": \"%s\""
                             "}]";
 
@@ -166,13 +166,13 @@ bool initWifi()
 */
 void reportToHttp(String g_pm1p0_sp_value, String g_pm2p5_sp_value, String g_pm10p0_sp_value)
 {
-  Serial.println("Reporting to http ");
-  Serial.print(g_pm1p0_sp_value + "  ");
-  Serial.print(g_pm2p5_sp_value + "  ");
-  Serial.println(g_pm10p0_sp_value);
   char measurements[256];
   char recorded[27];
   char source[10];
+
+  Serial.println("updating localtime");
+  time(&now);
+  timeinfo = localtime(&now);
 
   Serial.println("generating recorded template: ");
   sprintf(recorded,

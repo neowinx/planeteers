@@ -20,6 +20,7 @@ void setup() {
 void loop() {
   String payload = receiveLoRa();
   if(payload != "") {
+    Serial.println("payload received");
     String suchistr = getValue(payload, ':', 0);
     if (suchistr == "suchi") {
       String g_pm1p0_sp_value = getValue(payload, ':', 1);
