@@ -86,6 +86,16 @@ _The following parts are just here for reference since I will test them on chris
 
 Both projects (suchi and ma-ti) supports the next boards as the core hardware (we will be adding more in the near future)
 
+**=======**
+**CAUTION**
+**=======**
+
+DANGER WILL ROBINSON! DANGER!
+
+Do not power the LoRa modules without an antenna or you risk frying your module!!!
+
+**=======**
+
 #### - TTGO T-Beam
 
 - TTGO T-Beam ESP32 915MHz [AliExpress](https://www.aliexpress.com/item/4001178678568.html?spm=a2g0o.productlist.0.0.55c05386IacCzc&algo_pvid=b483f02b-ea80-4f11-bde8-c2762328d077&algo_exp_id=b483f02b-ea80-4f11-bde8-c2762328d077-0&pdp_ext_f={"sku_id"%3A"12000024058303348"}) [Amazon](https://www.amazon.com/LILYGO-Meshtastic-T-Beam-Bluetooth-Battery/dp/B097H11PJY/ref=sr_1_2?dchild=1&keywords=ttgo+t-beam&qid=1632840422&sr=8-2)
@@ -116,14 +126,6 @@ No need to wire anything since everything is already connected in the board. So,
 
 This is the more barebone alternative. The links to buy these parts are just for reference, if you find a better price for
 these parts go ahead!
-
-**=======**
-**CAUTION**
-**=======**
-
-DANGER WILL ROBINSON! DANGER!
-
-Do not power the LoRa modules without an antenna or you risk frying your module!!!
 
 **Wiring for suchi**
 
