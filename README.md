@@ -135,7 +135,7 @@ Below is presented the schematic to connect the LoRa modules with the PMS to the
 
 **Wiring for Ma-ti**
 
-The wiring for ma-ti es the same for the LoRa module without the PMS
+The wiring for ma-ti is the same for the LoRa module without the PMS
 
 ![ esp32 wiring ](doc/fzz/esp32_bb.png)
 
