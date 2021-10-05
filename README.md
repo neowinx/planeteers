@@ -94,7 +94,7 @@ DANGER WILL ROBINSON! DANGER!
 
 Do not power the LoRa modules without an antenna or you risk frying your module!!!
 
-**=======**
+**======================**
 
 #### - TTGO T-Beam
 
