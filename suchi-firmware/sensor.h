@@ -36,5 +36,6 @@ bool pmsRead() {
   bool result = pms.readUntil(data);
   Serial.println("sleeping pms");
   pms.sleep();
+  pmsSerial.flush();
   return result;
 }
